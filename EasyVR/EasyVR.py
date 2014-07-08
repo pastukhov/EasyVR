@@ -7,7 +7,7 @@ import time
 
 #from serial.serialutil import SerialException
 
- 
+
 
 
 class EasyVR:
@@ -302,7 +302,7 @@ class EasyVR:
 
 
 	def detect(self):
-		for i in range(0, 5):
+		for _ in range(0, 5):
 			self.sendCmd(self.CMD_BREAK)
 			if self.recv(self.WAKE_TIMEOUT) == self.STS_SUCCESS:
 				return True
@@ -445,7 +445,7 @@ class EasyVR:
 # 		  if (isdigit(p)):
 # 		    --len
 # 		len = 31 - len
- # 
+# 
 #    		sendArg(len)
 #    		for (i = 0; i < len; ++i):
 # 			c = name[i]
@@ -492,7 +492,7 @@ class EasyVR:
 	def resetAll(self):
 		self.sendCmd(self.CMD_RESETALL)
 		self.sendArg(17)
-		if self.recv(RESET_TIMEOUT) == self.STS_SUCCESS:
+		if self.recv(self.RESET_TIMEOUT) == self.STS_SUCCESS:
 			return True
 		else:
 			return False
@@ -510,8 +510,7 @@ class EasyVR:
 			return ord(self.recvArg(self.DEF_TIMEOUT)) - self.ARG_ZERO
 		else:
 			return False
-     
-
+		
 
 '''
 
