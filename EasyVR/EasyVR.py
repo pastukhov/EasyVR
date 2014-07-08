@@ -7,7 +7,7 @@ import time
 
 #from serial.serialutil import SerialException
 
-
+ 
 
 
 class EasyVR:
